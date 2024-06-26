@@ -1,11 +1,13 @@
 
-def read_file():
+def read_file(): 
+    # reads the file
     with open("books/frankenstein.txt") as f:
         file_contents = f.read()
 
     return file_contents
 
-def count_words():
+def count_words(): 
+    # counts all words in file
     words = read_file().split()
     n_words = 0
     for word in words:
@@ -14,17 +16,12 @@ def count_words():
 
     return n_words
 
-def count_letters():
+def count_letters(): 
+        # counts the letters
         text_lower = read_file().lower()
         characters = list(text_lower)
-        #print(characters[1:10])
-        # imports "string" then uses string.ascii_lowercase to take all normal lowercase letters and populates a dict with every letter being a:0 for example.
-        #use this instead of else below if you only want characters 
-        #import string
-        #letter_count = dict.fromkeys(string.ascii_lowercase, 0)
 
         letter_count = {}
-        #print(letter_count)
         
         for character in characters:
             if character in letter_count:
@@ -34,10 +31,10 @@ def count_letters():
                  letter_count[character] = 1
 
                          
-        #print(letter_count)
         return letter_count              
 
-def sort_on(dict):
+def sort_on(dict): 
+     # helper to return the number int. from a dict entry
      return dict["num"]
 
 def main():
@@ -45,6 +42,7 @@ def main():
     print(count_words(), "words found in the document" )
     letter_count = count_letters()
     
+    #this gives us a list of all std. alphabetical characters only.
     import string
     letterlist = list(string.ascii_lowercase)
     
